@@ -1,0 +1,185 @@
+imports:
+  "@flyde/stdlib":
+    - InlineValue
+    - GetAttribute
+    - Entries
+    - Loop List
+    - Conditional
+node:
+  instances:
+    - pos:
+        x: -278.00054931640625
+        y: -333.52128784179683
+      id: o8n7w1s9ort18hpycc6kp7q1
+      inputConfig: {}
+      nodeId: InlineValue__o8n7w1s9ort18hpycc6kp7q1
+      macroId: InlineValue
+      macroData:
+        value:
+          type: json
+          value:
+            a.b: aa
+            c: cc
+    - pos:
+        x: -702.7670727539062
+        y: 327.60412406921387
+      id: vog3fgrwhiex5x03o0af64pr
+      inputConfig: {}
+      nodeId: GetAttribute__vog3fgrwhiex5x03o0af64pr
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: dynamic
+          value: "'a.b'"
+    - pos:
+        x: -511.0631103515625
+        y: -187.85206420898436
+      id: Entries-be04fk5
+      inputConfig: {}
+      nodeId: Entries
+    - pos:
+        x: -517.4978808593751
+        y: -59.33592407226564
+      id: Loop List-jz14fso
+      inputConfig: {}
+      nodeId: Loop List
+    - pos:
+        x: -735.9216748046874
+        y: 119.61305419921877
+      id: z7vs00e2a9o2a0c68k348r73
+      inputConfig: {}
+      nodeId: Conditional__z7vs00e2a9o2a0c68k348r73
+      macroId: Conditional
+      macroData:
+        condition:
+          type: EQUAL
+        leftOperand:
+          type: string
+          value: "{{value}}"
+        rightOperand:
+          type: string
+          value: a.b
+    - pos:
+        x: -691.7662353515625
+        y: 37.39317504882811
+      id: mdur8cps1xamfcwmvt2je1pc
+      inputConfig: {}
+      nodeId: GetAttribute__mdur8cps1xamfcwmvt2je1pc
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: string
+          value: "0"
+    - pos:
+        x: -459.6229687499999
+        y: 330.22220611572266
+      id: Example-4c04f3v
+      inputConfig: {}
+      nodeId: GetAttribute__Example-4c04f3v
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: string
+          value: a.b
+    - pos:
+        x: 199.74049560546882
+        y: 326.4658012390137
+      id: Example-ln14fx8
+      inputConfig: {}
+      nodeId: GetAttribute__Example-ln14fx8
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: string
+          value: c
+    - pos:
+        x: -231.43375976562493
+        y: 327.48829650878906
+      id: Example-4r04fau
+      inputConfig: {}
+      nodeId: GetAttribute__Example-4r04fau
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: string
+          value: a
+    - pos:
+        x: -20.210859374999927
+        y: 327.7861785888672
+      id: Example-8z14f7p
+      inputConfig: {}
+      nodeId: GetAttribute__Example-8z14f7p
+      macroId: GetAttribute
+      macroData:
+        key:
+          type: string
+          value: b
+  connections:
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: Entries-be04fk5
+        pinId: object
+    - from:
+        insId: Entries-be04fk5
+        pinId: entries
+      to:
+        insId: Loop List-jz14fso
+        pinId: list
+    - from:
+        insId: Loop List-jz14fso
+        pinId: item
+      to:
+        insId: mdur8cps1xamfcwmvt2je1pc
+        pinId: object
+    - from:
+        insId: mdur8cps1xamfcwmvt2je1pc
+        pinId: value
+      to:
+        insId: z7vs00e2a9o2a0c68k348r73
+        pinId: value
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: vog3fgrwhiex5x03o0af64pr
+        pinId: object
+    - from:
+        insId: z7vs00e2a9o2a0c68k348r73
+        pinId: "true"
+      to:
+        insId: vog3fgrwhiex5x03o0af64pr
+        pinId: key
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: Example-4c04f3v
+        pinId: object
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: Example-ln14fx8
+        pinId: object
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: Example-4r04fau
+        pinId: object
+    - from:
+        insId: o8n7w1s9ort18hpycc6kp7q1
+        pinId: value
+      to:
+        insId: Example-8z14f7p
+        pinId: object
+  id: Example
+  inputs: {}
+  outputs: {}
+  inputsPosition: {}
+  outputsPosition:
+    result:
+      x: -23.264428942324532
+      y: 237.25953921502617
